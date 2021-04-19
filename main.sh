@@ -1,16 +1,17 @@
-#!/bin/bash
+#!/bin/zsh
 
 export CUDA_VISIBLE_DEVICES=0
 
 command="$@"
 
-display_off() {
-    [[ ! $(xset q | awk 'END{print $3}') == 'On' ]]
+ready_to_mine() {
+    [[ ! $(xset q | awk 'END{print $3}') == 'On' ]] && 
+        [[ ! $(timew) =~ "bettzeit|schlafen" ]]
 }
 
 while true
 do
-    if display_off
+    if ready_to_mine
     then
         if [[ $pid_miner == '' ]]
         then

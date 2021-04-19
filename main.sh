@@ -23,7 +23,7 @@ do
             date
         fi
     else
-        printf 'Display on, waiting for display to turn off...    '
+        printf 'Waiting...    '
         date
         if [ -v pid_miner ]
         then

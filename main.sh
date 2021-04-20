@@ -5,8 +5,8 @@ export CUDA_VISIBLE_DEVICES=0
 command="$@"
 
 ready_to_mine() {
-    [[ ! $(xset q | awk 'END{print $3}') == 'On' ]] && 
-        [[ ! $(timew) =~ "bettzeit|schlafen" ]]
+    [[ ! $(xset q | awk 'END{print $3}') == 'On' ]] # && 
+        # [[ ! $(timew) =~ "bettzeit|schlafen" ]]
 }
 
 while true
